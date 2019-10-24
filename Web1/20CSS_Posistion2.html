@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #container{
+            width:770px;
+            margin:auto;
+            position:relative;
+        }
+        header{
+           
+            height:80px;
+        }
+        aside {
+            height:420px;
+             width:210px;
+             float:left;
+           
+        }
+         article {
+           height:420px;
+            width:560px;
+            float:right;
+         
+        
+        }
+          footer {
+           height:76px;
+           clear:both;
+        
+        }
+
+          #ad1{
+              position:absolute;
+              top:0;
+              left:0;
+          }
+            #ad2{
+              position:fixed;
+              top:0;
+              right:0;
+          }
+          #ad3{
+              position:absolute;
+              top:50px;
+              /*left:109px;*/
+              
+          }
+          #ad3>span{
+              background-color:#cccccc;
+              color:white;
+              font-size:0.5rem;
+              cursor:pointer;
+          }
+          .hide{
+            display:none;
+          }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+
+            <img src="images/top.jpg" />
+        </header>
+        <aside>
+
+            <img src="images/left.jpg" />
+        </aside>
+        <article>
+
+            <img src="images/right.jpg" />
+        </article>
+        <footer>
+
+            <img src="images/bottom.jpg" />
+        </footer>
+        <div id="ad3">
+            <span>點我關閉</span><br />
+            <img src="images/ad.jpg" />
+        </div>
+    </div>
+
+    <img src="images/banner1.jpg" id="ad1" />
+
+    <img src="images/banner2.jpg" id="ad2" />
+   
+    <script>
+
+
+        function getAd3Width() {
+            var ad3 = document.getElementById("ad3");
+            var container = document.getElementById("container");
+            var w = (container.clientWidth - ad3.clientWidth) / 2;
+            ad3.style.left = w + "px";
+
+            console.log(w);
+            console.log(container.clientWidth);
+            console.log(ad3.clientWidth);
+        }
+
+        window.onload = getAd3Width;
+
+        ad3.children[0].addEventListener('click', function () {
+            ad3.className = "hide";
+        })
+
+    </script>
+</body>
+</html>

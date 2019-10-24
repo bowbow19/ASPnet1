@@ -1,0 +1,63 @@
+﻿@model _03View.Models.Member
+
+@{
+    ViewBag.Title = "會員註冊";
+}
+
+<h2>會員註冊</h2>
+
+@using (Html.BeginForm("Create","HTMLHelper",FormMethod.Post,new {id="form1" }))
+{
+    <p>
+        <input  id="Text1" type="text" class="form-control"/>
+        帳號：@Html.TextBoxFor(model=>model.UserId,new { @class="form-control"})
+    </p>
+    <p>
+        密碼：@Html.PasswordFor(model => model.Pwd)
+    </p>
+    <p>
+        姓名：@Html.TextBoxFor(model => model.Name)
+    </p>
+    <p>
+        
+        信箱：@Html.TextBoxFor(model => model.Email, new {type="email" })
+    </p>
+    <p>
+
+        生日：@Html.TextBoxFor(model => model.Birthday,new { @class="form-control"})
+    </p>
+    <p>
+        <img src="@Url.Action("getCode")"/><span class="glyphicon glyphicon-refresh" style="font-size:20pt;cursor:pointer" onclick="form1.code.src = '/HTMLHelper/getCode?' + Math.random()"></span>
+        <br />驗證碼:<input  id="ValidationCode" name="ValidarionCode" type="text"  maxlength="6" class="form-control" />
+    </p>
+    <p>
+        <input id="Submit1" type="submit" value="註冊" />
+    </p>
+    <hr />
+
+    <p>
+        @ViewBag.Msg
+    </p>
+}
+
+
+<h2>成績判斷</h2>
+
+@helper ScoreCheck(int math,int eng,int chi)
+    {
+int avg = (math + eng + chi) / 3;
+if(avg>=60)
+{
+        @:及格
+}
+    else
+{
+        @:不及格
+}
+
+
+    }
+
+<h2>@ScoreCheck(70,50,69)</h2>
+
+<h2>@MyHelper.GlobalScoreCheck(70, 50, 69)</h2>

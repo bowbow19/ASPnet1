@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #tb1 {
+            border: 3px double black;
+            width: 90%;
+            margin: auto;
+        }
+
+            #tb1 > thead > tr {
+                background-color: black;
+                color: white;
+            }
+
+            #tb1 > tbody > tr:nth-child(2n+1) {
+                /*border:1px solid black;*/
+                background-color: #d7d7d7;
+            }
+
+            #tb1 > tbody > tr:hover {
+                background-color: black;
+                color: white;
+            }
+    </style>
+
+
+</head>
+<body>
+    <table id="tb1">
+
+    </table>
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $.ajax({
+            type: 'get',
+            url: 'https://ptx.transportdata.tw/MOTC/v2/Rail/TRA/LiveBoard?$top=30&$format=JSON',
+            format: 'json',
+            success: function (data) {
+                $('#tb1').append("<thead><tr><td>站名</td><td>車次</td><td>車種</td><td>山海線</td><td>到站時間</td><td>發車時間</td><td>誤點時間</td></tr></thead><tbody>");
+
+                for (i = 0; i < data.length; i++) {
+
+                    switch (data[i].TripLine) {
+                        case 0:
+                            TripLine = ("不經山海線");
+                            break;
+                        case 1:
+                            TripLine = ("山線");
+                            break;
+                        case 2:
+                            TripLine = ("海線");
+                            break;
+        }
+                    switch (data[i].Direction) {
+                        case 0:
+                            Direction = ("(順行)");
+                            break;
+                        case 1:
+                            Direction = ("(逆行)");
+                            break;
+                    }
+                    if (data[i].DelayTime == 0) {
+                       DelayTime= "準點"
+                    }
+                    else {                       
+                        DelayTime ="<div style=color:red>"+ data[i].DelayTime + "分</div>";
+                    }
+                    $('#tb1').append("<tr><td>" + data[i].StationName.Zh_tw + "</td><td>" + data[i].TrainNo + "</td><td>" + data[i].TrainTypeName.Zh_tw + "</td><td>" + TripLine+ Direction + "</td><td>" + data[i].ScheduledArrivalTime + "</td><td>" + data[i].ScheduledDepartureTime + "</td><td>" + DelayTime + "</td></tr>");              
+ }
+
+                $('#tb1').append("</tbody>");                       
+            },
+            error: function () {
+                alert('失敗');
+            }
+        });
+
+    </script>
+</body>
+</html>

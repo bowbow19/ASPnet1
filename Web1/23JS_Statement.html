@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var a = 10;
+        a = 20;  // 指定運算, a=20
+        a = a + 10; // 指定運算, a=20+10, a=30
+        a += 5;  // 指定運算, a=a+5, a=30+5, a=35
+
+        a -= 8; // 指定運算, a=a-8, a=35-8, a=27
+        a *= 10; // 指定運算, a=a*10, a=27*10, a=270
+        a /= 27;  // 指定運算, a=a/10, a=270/27, a=10
+
+        a++; //a=a+1,a+=1, a=11
+        document.write(a+"<hr>");
+        ////////////////////////////////////////////////////
+        var a = 9985855699, b = 777744488;
+        //var c;
+        //c = a; //c=10;
+        //a = b;// a=20;
+        ////b = c; //b=10
+        a = a + b;  //10+20  a=30;
+        b = a - b;  //30-20  b=10;
+        a = a - b;  //30-10  a=20
+
+        document.write("a=" + a + ", b=" + b+"<hr>");
+        ///////////////////////////////////////////////////
+        var strName = "Jack", intNumber = 12345, blnGender = true;
+        var result;
+
+        result = strName + blnGender;
+        document.write(result + "<br>");
+        document.write(typeof (result) + "<br>");
+        result = strName + intNumber;
+        document.write(result + "<br>");
+        document.write(typeof (result) + "<br>");
+        result = intNumber + blnGender;
+        document.write(result + "<br>");
+        document.write(typeof (result) + "<br>");
+         result = intNumber + strName;
+        document.write(result + "<br>");
+        document.write(typeof (result) + "<br>");
+        result = blnGender + strName;
+        document.write(result + "<br>");
+        document.write(typeof (result) + "<br>");
+         result = blnGender + intNumber;
+        document.write(result + "<br>");
+        document.write(typeof (result) + "<br>");
+        document.write(typeof (blnGender) + "<hr>");
+        ///////////////////////////////////////////////////////////
+
+        document.write(parseInt(3.2) + "<br>");
+        document.write(parseInt("3.2") + "<br>");
+        document.write(parseInt("3qaz") + "<br>");
+        document.write(parseInt("3 page") + "<br>");
+        document.write(parseInt("18ff", 16) + "<br>");
+        document.write(parseInt("18ff",8) + "<br>");
+        document.write(parseInt("18ff", 10) + "<br>");
+        document.write(parseInt("ff1234") + "<br>");
+        document.write(parseInt("ttyyuuff") + "<hr>");
+        document.write(parseFloat("3.2") + "<br>");
+        document.write(parseFloat("aaaa3.2") + "<hr>");
+        //////////////////////////////////////////////////////
+
+        document.write(eval(5 > 3) + "<br>");
+        document.write(eval("5>3") + "<br>");
+        document.write(eval("aaa=1000") + "<br>");
+        document.write(eval("20+4*5") + "<br>");
+ 
+    </script>
+</body>
+</html>

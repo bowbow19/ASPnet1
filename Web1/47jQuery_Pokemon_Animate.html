@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #main {
+            width: 600px;
+            position: relative;
+            margin: auto;
+        }
+        #main2{
+            font-size:100px;
+
+        }
+
+        #ball {
+            width: 50px;
+            top: 700px;
+            left: -400px;
+            position: absolute;
+            cursor:pointer;
+        }
+
+        #title {
+            left: -800px;
+            font-family: Arial;
+            font-size: 28pt;
+            position: absolute;
+            margin: auto;
+            opacity:0;
+        }
+
+        #bg {
+            right:650px;
+            top: 30px;
+            position: absolute;
+        }
+
+        #ding {
+            width: 300px;
+            top: 400px;
+            position: absolute;
+cursor: url(http://cur.cursors-4u.net/games/gam-6/gam548.cur), auto !important;
+        }
+
+        #pika {
+            width: 400px;
+            left: 250px;
+            top: 330px;
+            position: absolute;
+            z-index:1;
+            cursor: url(http://cur.cursors-4u.net/holidays/hol-5/hol445.ani), url(http://cur.cursors-4u.net/holidays/hol-5/hol445.gif), auto !important;} 
+        }
+
+    </style>
+</head>
+<body onload="test()">
+    
+        <audio  id="bgmusic"  autoplay >
+            <source src="music/pokemon-xy-kirakira-glitter-2015-full-version.mp3" type="audio/mpeg"  id="song" />
+
+        </audio>
+        <div id="a"></div>
+        <div id="b"></div>
+    
+
+    <div id="main">
+
+            <img src="animate/ball.gif" id="ball" />
+            
+
+        <h1 id="title">Welcome to Pokemon World</h1>
+        <img src="animate/ding.gif" id="ding" />
+        <img src="animate/pica.gif" id="pika" />
+        
+    </div>
+
+    <img src="animate/pokemonBG.png" id="bg" />
+
+
+    <div id="main2">
+        <h1>Game Over</h1>
+    </div>
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+        $('#main2').hide();
+        $('#main').children().addClass('position');
+    
+    //music
+        var a = document.getElementById('bgmusic');
+
+        function test() {
+           a.load();
+            a.play();
+        }
+
+    //animate
+    $('#title').animate({ 'left': '+=830', 'opacity': '1' }, 1500, 'swing');
+
+    $('#bg').fadeIn(1500, function () {
+        $('#ball').animate({ 'left': '+=1030', 'top': '50' }, 1500, function () {
+            $('#ding').fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+            $('#pika').animate({ 'top': '350px' }, 700).animate({ 'width': '40px' }, 600).animate({ 'width': '400px' }, 600).animate({ 'width': '40px' }, 600).animate({ 'width': '400px' }, 600);
+        });
+
+   $('#ball').hover(function () {
+        $(this).animate({ 'width': '100px' }, 1000);
+   });
+
+        $('#ding').hover(function () {
+            $(this).animate({ 'top': '+=20px' }, 100).animate({ 'top': '-=20px' }, 100).animate({ 'top': '+=20px' }, 100).animate({ 'top': '-=20px' }, 100).animate({ 'top': '+=20px' }, 100).animate({ 'top': '-=20px' }, 100);
+    });
+
+        $('#ball').click(function () {
+            $(this).css({ 'z-index': '120' }).animate({ 'top': '700px', 'left': '-300px' }, 2000, function () {
+
+                $('#bg').css({ 'z-index': '120' }).animate({ 'left': '-600px', 'right': '-50px', 'top': '-500px', 'width': '2500px' }, 1000, function () {
+                    $('#main').hide();
+                $('#bg').css({ 'z-index': '120' }).animate({'left':'-600px','right':'-50px','top':'-500px' , 'width': '10px' }, 1000);
+                $('#main2').show(1000);
+                    
+                });
+
+                $('#song').attr('src', 'music/pokemon-xy-doridori.mp3');
+                         a.load();
+                         a.play();
+            });
+
+        });
+
+    });
+
+ 
+            
+
+    </script>
+
+
+</body>
+</html>

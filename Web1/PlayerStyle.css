@@ -1,0 +1,148 @@
+﻿body {
+}
+
+
+@font-face {
+    font-family: 'Myfont';
+    src: url('fonts/webdings.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Myfont';
+    src: url('fonts/webdings.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Myfont';
+    src: url('fonts/webdings.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Myfont';
+    src: url('fonts/webdings.woff') format('woff');
+}
+
+.lineThrough {
+    text-decoration: line-through;
+}
+
+.hidden {
+    display: none;
+}
+
+#ControlPanel {
+    width: 650px;
+    border: 5px double;
+    margin: auto;
+    text-align: center;
+}
+
+    #ControlPanel > span {
+        cursor: pointer;
+        font-family: Myfont;
+        font-size: 3rem;
+        border: 1px solid;
+        box-shadow: 0px 0px 7px black;
+        border-radius: 50%;
+    }
+
+
+#music, #info, #duration, #info2 {
+    width: inherit;
+    background-color: black;
+    color: chartreuse;
+    font-size: 16pt;
+}
+
+#info {
+    margin-bottom: -5px;
+}
+
+#volValue {
+    width: 22px;
+    background-color: black;
+    color: yellow;
+}
+
+#settime {
+    background-color: #c8c8c8;
+    height: 10px;
+}
+
+
+
+#volM, #volP {
+    border-radius: 50%;
+}
+
+#vol {
+    width: 80%;
+    height: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 3px solid #808080;
+    background-color: #c8c8c8;
+}
+
+    #vol::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 35px;
+        height: 25px;
+        background-color: #303030;
+        border: 3px groove white;
+    }
+
+#progress {
+    width: 100%;
+    height: 5px;
+    margin-bottom:10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    background-color: #e4e4e4;
+}
+
+    #progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 10px;
+        height: 5px;
+        background-color: #b00000;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+        #progress::-webkit-slider-thumb:hover {
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+        }
+
+#book {
+    margin: auto;
+    width: 650px;
+}
+
+    #book > div {
+        border: 1px solid;
+        width: 323px;
+        height: 400px;
+        overflow: auto;
+        float: left;
+        cursor: copy;
+    }
+
+#btnUpdateMusic {
+    clear: both;
+    width: 100%;
+    background-color: cornflowerblue;
+    font-size: 16px;
+    text-align: center;
+    border: 3px groove white;
+    color: white;
+    font-weight: 900;
+
+  
+}

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+         .line {
+            border: 1px solid;
+        }
+        .red {
+            background-color: red;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>
+            ddd
+            <ul id="list1_1">
+                <li>aaa</li>
+                <li>bbb</li>
+                <li>
+                    ccc
+                    <ul id="list1_1_1">
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                        <li>eee</li>
+                    </ul>
+                </li>
+                <li>ddd</li>
+                <li>eee</li>
+            </ul>
+        </li>
+        <li>
+            eee
+            <ul id="list1_2">
+                <li>aaa</li>
+                <li>bbb</li>
+                <li>ccc</li>
+                <li>ddd</li>
+                <li>eee</li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul id="list2">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+    </ul>
+
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        //$('#list').addClass('yellow');
+        //$('#list').addClass('line');
+        //$('#list').addClass('red');
+
+        $('#list').addClass('yellow').addClass('line').addClass('red');
+        //$('#list ul').addClass('red');
+        $('#list>li:nth-child(2n+1)').addClass('red');
+
+
+        var list = document.getElementById("list");
+        list.className = "yellow";
+        list.className += " line";
+        list.className += " red";
+        for (i = 0; i < list.children.length; i++) {
+            if (i % 2 == 0) {
+                list.children[i].className = "red";
+            }
+        }
+
+    </script>
+</body>
+</html>

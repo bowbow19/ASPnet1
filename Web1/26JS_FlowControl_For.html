@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        //for回圈
+        //for (let i = 1; i <= 6; i++) {
+        //    document.write("<h" + i + ">Welcome My Homepage!!</h" + i + ">");
+        //}
+        //document.write("<hr>");
+
+        //for巢狀回圈
+        //for (let j = 1; j <= 100;j++) {
+        //    for (let i = 1; i <= 6; i++) {
+        //        document.write("<h" + i + ">Welcome My Homepage!!</h" + i + ">");
+        //    }
+        //}
+        //document.write("<hr>");
+        /////////////////////////////////////////
+        var result = "", i=1;
+        //for (let i = 1; i <= 6; i++) {
+        //         result += "<h" + i + ">Welcome My Homepage!!</h" + i + ">";
+        //}
+        //console.log(result);
+        //for (let j = 1; j <= 100; j++) {
+        //     document.write(result);
+        //}
+
+        //for (let j = 1; j <= 100; j++) {
+        //     document.write("<h1>Welcome My Homepage!!</h1><h2>Welcome My Homepage!!</h2><h3>Welcome My Homepage!!</h3><h4>Welcome My Homepage!!</h4><h5>Welcome My Homepage!!</h5><h6>Welcome My Homepage!!</h6>");
+        //}
+
+        //var total = 0,c=0; //列數
+        //for (let j = 1; j <= 84; j++) {
+        //    result += "<h" + i + ">Welcome My Homepage!!</h" + i + ">";
+        //    i++;
+        //    c++;
+        //    if (i == 7) {
+        //        i = 1;
+        //        document.write(result);
+        //        console.log("列數:" + (total += c));
+        //    }
+        //}
+        //document.write("<hr>");
+            
+
+
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j <=i; j++) {
+                console.log("*");
+            }
+            //document.write("<br>");
+        }
+        let a = "";
+        for (i = 1; i <= 5000; i++) {
+            a += "*";
+            console.log(a);
+            document.write("<br>");
+        }
+
+        document.write("<hr>");
+
+
+    </script>
+</body>
+</html>

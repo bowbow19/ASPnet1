@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var Rainbow = new Array("紅", "橙", "黃", "綠", "藍", "靛", "紫");
+        document.write(Rainbow);
+        document.write("<hr>");
+        var RainbowColor = new Array("Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet");
+        document.write(RainbowColor);
+        document.write("<hr>");
+
+        for (i = 0; i < 7; i++)
+            document.write(Rainbow[i]);
+        document.write("<hr>");
+        for (i = 0; i < 7; i++)
+            document.write(RainbowColor[i]);
+         document.write("<hr>");
+
+        for (i = 0; i < Rainbow.length; i++)
+            document.write("<span style='font-size:3rem;color:" + RainbowColor[i] + "'>" + Rainbow[i] + "</span>");
+        document.write("<hr>");
+
+        for (var i in Rainbow) {
+             document.write("<span style='font-size:3rem;color:" + RainbowColor[i] + "'>" + Rainbow[i] + "</span>");
+        }
+
+    </script>
+</body>
+</html>

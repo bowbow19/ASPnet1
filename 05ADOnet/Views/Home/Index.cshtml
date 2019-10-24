@@ -1,0 +1,40 @@
+﻿@using System.Data
+@model System.Data.DataTable
+
+
+@{
+    ViewBag.Title = "學生資料";
+}
+
+<h2>學生資料</h2>
+
+
+<p>
+    @Html.ActionLink("新增資料", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+@if (Model.Rows.Count == 0)
+{
+    <h2>無任何資料</h2>
+}
+else
+{
+    <div class="row">
+        @foreach (DataRow row in Model.Rows)
+        {
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <h3>姓名：@row["fName"]</h3>
+                    <p class="text-right">學號：@row["fStuId"]</p>
+                    <h1 class="text-center">@row["fScore"]</h1>
+                    <p class="alert-info">@row["fEmail"]</p>
+                    <hr />
+                    <p class="text-right">
+                        @Html.ActionLink("刪除", "Delete", new { fStuId = row["fStuId"] }, new { onclick = "return confirm('您確定要刪除嗎??')", @class = "btn btn-danger btn-block" })
+                        @Html.ActionLink("修改", "Edit", new { fStuId = row["fStuId"] }, new { @class = "btn btn-warning btn-block" })
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+}

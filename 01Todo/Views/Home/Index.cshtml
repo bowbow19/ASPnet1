@@ -1,0 +1,129 @@
+﻿@model IEnumerable<_01Todo.Models.ToDo>
+
+<style>
+    #table1 {
+        width: 100%;
+        border: 2px solid black;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+        #table1 > thead th {
+            border: 1px solid gray;
+            background-color: #808080;
+            color: white;
+        }
+
+        #table1 td, #table1 > tbody th {
+            border-bottom: 1px solid gray;
+            height: 40px;
+        }
+
+        #table1 > tbody > tr:nth-child(2n+1) {
+            background-color: #a7fffa;
+        }
+
+        #table1 > tbody > tr:hover {
+            background-color: black;
+            color: white;
+        }
+
+    #btn span {
+        cursor: pointer;
+    }
+
+    .pink {
+        background-color: pink;
+    }
+
+    .blue {
+        background-color: #a7fffa;
+    }
+
+    .yellow {
+        background-color: #fcf2b8;
+    }
+</style>
+
+@{
+    ViewBag.Title = "待辦事項";
+}
+
+<h2>待辦事項</h2>
+
+<p>
+    <a href="/Home/Create">新增待辦事項</a>
+    @*@Html.ActionLink("新增待辦事項", "Create")*@
+</p>
+
+<div id="btn">
+    <span id="pink">　</span>
+    <span id="blue">　</span>
+    <span id="yellow">　</span>
+</div>
+
+<table id="table1">
+    <thead>
+        <tr>
+            <th>
+                序號
+            </th>
+            <th>
+                標題
+                @*@Html.DisplayNameFor(model => model.Title)*@
+            </th>
+            <th>
+                圖示
+                @*@Html.DisplayNameFor(model => model.Image)*@
+            </th>
+            <th>
+                結案日
+                @*@Html.DisplayNameFor(model => model.Date)*@
+            </th>
+            <th>
+                管理
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @item.ID
+            </th>
+            <td>
+                @item.Title
+                @*@Html.DisplayFor(modelItem => item.Title)*@
+            </td>
+            <td>
+                <img src="~/images/@item.Image" />
+
+                @*@Html.DisplayFor(modelItem => item.Image)*@
+            </td>
+            <td>
+                @item.Date.ToShortDateString()
+                @*@Html.DisplayFor(modelItem => item.Date)*@
+            </td>
+            <td>
+                <a href="/Home/Edit?id=@item.ID">編輯</a>
+                @*@Html.ActionLink("編輯", "Edit", new { id=item.ID }) |*@
+                @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
+                <a href="/Home/Delete?id=@item.ID" onclick="return confirm('您真的要刪嗎?')">刪除</a>
+
+                @*@Html.ActionLink("Delete", "Delete", new {onclick="return confirm('您真的要刪嗎?')", id = item.ID })*@
+            </td>
+        </tr>
+    }
+
+</table>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script>
+    //$('#pink').addClass('pink');
+    //$('#blue').addClass('blue');
+    //$('#yellow').addClass('yellow');
+
+    var btn=doc
+
+    $('#btn span').addClass('pink');
+
+</script>

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        
+        //function MyReverse() {
+        //    let r = "";
+        //    for (i = Rainbow.length - 1; i >= 0; i--)
+        //        r += Rainbow[i];
+
+        //    return r;
+        //}
+
+        //var Rainbow = new Array("紅", "橙", "黃", "綠", "藍", "靛", "紫");
+
+        //var result = MyReverse();
+        //document.write(result);
+    /////////////////////////////////////////////////
+
+        //反轉陣列值
+        function MyReverse(arrData) {
+            let r = "";
+            for (i = arrData.length - 1; i >= 0; i--)
+                r += arrData[i];
+
+            return r;
+        }
+
+        //求a與b最大公因數
+        function getGCD(a,b) {
+            var k = 0;
+            while (a % b != 0) {
+                k = a % b;
+                a = b;
+                b = k;
+            }
+            return b;
+        }
+
+         //計算進制轉換所有之陣列大小
+        function arrayLength(n) {
+           var c = 0;
+           while (n >= 1) {
+                n = Math.floor(n / 2);
+                c++;
+            }
+            console.log(c);
+            return c;
+        }
+
+         //轉換為二進制
+        function toBinary(n) {
+            let c = arrayLength(n);
+            let r = new Array(c) , m = 0, i = 0;
+            while (true) {
+                m = n % 2;
+                n = Math.floor(n / 2);
+                r[i] = m;
+                i++;
+                if (n == 0)
+                    break;
+            }
+            return MyReverse(r);
+        }
+
+        //反轉陣列值主程式
+        var Rainbow = new Array("紅", "橙", "黃", "綠", "藍", "靛", "紫");
+        var Friend = new Array("Jack", "Mary", "John",  "Joe");
+
+        var result = MyReverse(Rainbow);
+        document.write(result);
+
+        result = MyReverse(Friend);
+        document.write(result);
+        ///////////////////////////////
+        document.write("<hr>");
+        //求x與y最大公因數主程式
+        var x = 7, y = 3;
+        document.write(x+"與"+y+"的最大公因數為"+getGCD(x, y));
+        /////////////////////////////////
+        document.write("<hr>");
+
+        //進制轉換主程式
+        var c = 20;
+        document.write(toBinary(c));
+
+        /////////////////////////////////////
+     
+
+    </script>
+</body>
+</html>

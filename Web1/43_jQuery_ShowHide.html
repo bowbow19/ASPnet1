@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1 id="shownews">顯示/隱藏</h1>
+    <div id="news">
+
+
+
+
+
+    </div>
+
+
+
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $('#news').hide();
+
+
+
+
+        //動畫執行完再做字的變換
+        var flat = true;
+        $('#shownews').click(function () {
+            $('#news').toggle(3000, function())
+
+        })
+
+
+    </script>
+
+
+</body>
+</html>

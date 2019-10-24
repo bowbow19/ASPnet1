@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var strGender = "女";
+        let a = 1;
+        const PI = 3.1415926;
+        let Pi = 3.1415926;
+
+        //PI = 230;  //這行會報錯
+        Pi = 230;
+
+        document.write("PI=" + PI+"<br>");
+         document.write("Pi="+Pi+"<br>");
+        //條件控制
+        if (true) {
+            a = 123;
+            document.write("a="+a+", ");
+        }
+         document.write("a="+a);
+        //二選一條件控制
+        if (strGender == "男") {
+            document.write("先生您好");
+            document.write("歡迎使用男版Javascript!!");
+        }
+        else {
+       
+            document.write("小姐您好!!");
+            document.write("歡迎使用女版Javascript!!");
+        }
+        document.write("<hr>");
+        //多條件控制
+        var intPayType = 3; //1:信用卡付款, 2:現金, 3:轉帳, 4,貨到付款
+
+        if (intPayType == 1) {
+            document.write("信用卡付款");
+        }
+        else if (intPayType == 2) {
+            document.write("現金付款");
+        }
+        else if (intPayType == 3) {
+            document.write("轉帳付款");
+        }
+        else {
+            document.write("貨到付款");
+        }
+
+        document.write("<hr>");
+        ////////////////////////////////////////////
+        //區分等第
+        //90分以上為優等, 80~89分為甲等, 70~79分為乙等
+        //60~69分為丙等, 60分以下為丁等
+
+        var score = 96;
+        //用if來判斷score的值
+        //if (score >= 90 && score <= 100)
+        //    document.write("優等");
+        //if (score >= 80 && score < 90)
+        //    document.write("甲等");
+        //if (score >= 70 && score < 80)
+        //    document.write("乙等");
+        //if (score >= 60 && score < 70)
+        //    document.write("丙等");
+        //if (score >= 0 && score < 60)
+        //    document.write("丁等");
+        ///////////////////////////////////////
+        //if (score >= 90 && score <= 100)
+        //    document.write("優等");
+        //else if (score >= 80 && score < 90)
+        //    document.write("甲等");
+        //else if (score >= 70 && score < 80)
+        //    document.write("乙等");
+        //else if (score >= 60 && score < 70)
+        //    document.write("丙等");
+        //else 
+        //    document.write("丁等");
+        //////////////////////////////////////////////
+        if (score >= 90)
+            document.write("優等");
+        else if (score >= 80)
+            document.write("甲等");
+        else if (score >= 70)
+            document.write("乙等");
+        else if (score >= 60)
+            document.write("丙等");
+        else 
+            document.write("丁等");
+
+        //////////////////////////////////////////////
+
+    </script>
+</body>
+</html>

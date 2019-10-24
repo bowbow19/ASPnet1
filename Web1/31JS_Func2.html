@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #car{
+            position:absolute;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="MyTime"></h1>
+    <hr />
+    X:<input id="txtX" type="text" />
+
+    Y:<input id="txtY" type="text" />
+    <hr />
+    <h2 id="news"></h2>
+    <hr />
+    <img src="images/car.png" width="80" id="car" />
+
+    <script>
+        var MyTime = document.getElementById("MyTime"); 
+        var news = document.getElementById("news");
+        var txtX = document.getElementById("txtX");
+        var txtY = document.getElementById("txtY");
+        var car = document.getElementById("car");
+        ///////////////////////////////////////////////
+
+        function MyAnimation() {
+            var x = car.offsetLeft;
+            x += 2;
+            console.log(x);
+            car.style.left = x + "px";
+
+            if(x<=1840)
+             setTimeout(MyAnimation , 10 );
+        }
+       
+        
+        MyAnimation();
+        ////////////////////////////////////
+        function showMyTime() {
+            var myTime = new Date();
+            var h = myTime.getHours();
+            var m = myTime.getMinutes();
+            var s = myTime.getSeconds();
+
+
+            h = h < 10 ? "0" + h : h;
+            m = m < 10 ? "0" + m : m;
+            s = s < 10 ? "0" + s : s;
+
+            MyTime.innerText = h + ":" + m + ":" + s;
+            //document.write(h + ":" + m + ":" + s);
+
+            setTimeout(showMyTime , 1000 );
+ 
+        }
+
+        showMyTime();
+        //////////////////////////////////////////////////////
+
+        document.addEventListener("mousemove",getXY);
+
+        function getXY(evt) {
+            txtX.value=evt.pageX;
+            txtY.value = evt.pageY;
+        }
+
+        ////////////////////////////////////////////
+        var Ncontent = "中央氣象局今天表示，輕度颱風利奇馬有機會增強為中度颱風，路徑上目前預期會比較接近台灣，從東北部近海北上，預計8日及9日最接近台灣，有機會發布海上及陸上颱風警報。中央氣象局表示，今天各地大多為多雲到晴的天氣，午後在中南部地區，尤其南投、雲林以南及北部山區易有局部短暫雷陣雨，並有短時強降雨發生的機率；北部高溫有機會達到攝氏36度以上。根據氣象局觀測，颱風利奇馬5日8時的中心位置在北緯18.5度，東經130.4度，以每小時6公里速度，向西北西進行。其中心氣壓992百帕，近中心最大風速每秒20公尺，瞬間最大陣風每秒30公尺，七級風暴風半徑100公里。氣象局預報員陳建安說，預期利奇馬的強度會持續增強，有機會增強為中度颱風，但是否強度會再往上就還要再觀察。陳建安指出，目前預期利奇馬的路徑會往台灣靠近一點點，從東北部近海北上，最接近台灣的時間點是落在本週四（8日）及週五（9日）。";
+        var letter=Ncontent.length //計算字串有幾個字
+        var i = 1,r="";
+        function typeNewsContent() {
+            r=Ncontent.substr(0, i);
+            i++;
+            news.innerText = r;
+
+            if(i<=letter)
+                setTimeout(typeNewsContent,300);
+        }
+
+        typeNewsContent();
+
+    </script>
+</body>
+</html>

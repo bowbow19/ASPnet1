@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <input id="Text1" type="text" />
+    <input id="Button1" type="button" value="搜尋" />
+    <table id="booklist">
+
+    </table>
+
+
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $('#Button1').click(function () {
+            $('#booklist').empty();
+
+            $.ajax({
+                type: 'get',       //怎麼跟伺服器做交換
+                url: "https://www.googleapis.com/books/v1/volumes?q=" + $('#Text1').val(),
+                success: function (data) {
+                    $('#booklist').append("<thead><tr><th>圖示</th><th>書名</th><th>作者</th><th>出版商</th><tr></thead>");
+                    $('#booklist').append("<tbody>");
+
+                    for (i = 0; i < data.items.length ; i++) {
+                        $('#booklist').append("<tr><td><img src='"+data.items[i].volumeInfo + "</td><td>" + i + "</td><td>" + i + "</td><td>" + i + "</td></tr>");
+                    }
+                    $('#booklist').append("<tbody>");
+                },
+                error: function () {
+                    alert("發生錯誤~");
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
