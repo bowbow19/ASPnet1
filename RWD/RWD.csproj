@@ -69,6 +69,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1.jpg" />
+    <Content Include="20Component_Card2.html" />
+    <Content Include="19Component_Card.html" />
+    <Content Include="18Concent_Image.html" />
     <Content Include="02Bootstrap_text.html" />
     <Content Include="01RWD_FirstPage.html" />
     <Content Include="09GridSystem_align .html" />
@@ -80,13 +84,18 @@
     <Content Include="03GridSystem.html" />
     <Content Include="04GridSystem2.html" />
     <Content Include="12Utility_Flexbox.html" />
+    <Content Include="17Content-Table.html" />
     <Content Include="15Unitily_text2.html" />
+    <Content Include="2.jpg" />
+    <Content Include="3.jpg" />
+    <Content Include="az0Tz.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\My.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
