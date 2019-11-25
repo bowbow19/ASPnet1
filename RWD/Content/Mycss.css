@@ -1,0 +1,30 @@
+﻿body {
+    font-family: 微軟正黑體;
+    background-color:orange;
+    color: white;
+}
+
+.header img{
+padding:inherit
+}
+.jumbotron {
+    background-image: url('../img/header.png');
+    background-repeat: round;
+}
+.jbtron_style {
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    font-weight: 700;
+    font-size: 56px;
+}
+
+.jbtron_style2 {
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.jumb-bg {
+    background-image: none;
+}

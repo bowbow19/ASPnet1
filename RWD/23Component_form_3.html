@@ -1,0 +1,61 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="card bg-light">
+        <div class="container">
+            <form id="login">
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" type="text" class="form-control " placeholder="Enter Your Email....." />
+                    <div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input id="pwd" type="password" class="form-control " />
+                    <div>
+
+                    </div>
+                </div>
+
+                <input id="Submit1" type="submit" value="submit" class="btn btn-success" />
+            </form>
+
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-3.0.0.js"></script>
+
+    <script>
+
+        $('#login').submit(function () {
+
+            if ($('#email').val() == "") {
+                $('#email').addClass("is-invalid");
+                $('#email~div').addClass("invalid-feedback").text("Request!!")
+            }
+            if ($('#pwd').val() == "") {
+                $('#pwd').addClass("is-invalid");
+                
+                $('#pwd~div').addClass("invalid-feedback").text("Request!!")
+            }
+            return false;
+        });
+
+
+
+    </script>
+</body>
+</html>

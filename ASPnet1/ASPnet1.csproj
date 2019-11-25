@@ -137,8 +137,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Animal.cs" />
+    <Compile Include="App_Code\Dog.cs" />
+    <Compile Include="App_Code\Cat.cs" />
+    <Compile Include="App_Code\Person.cs" />
+    <Compile Include="App_Code\Superman.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\_05HController.cs" />
+    <Compile Include="Controllers\_07ObjectController.cs" />
     <Compile Include="Controllers\產品資料Controller.cs" />
     <Compile Include="Controllers\產品類別Controller.cs" />
     <Compile Include="Controllers\訂貨主檔Controller.cs" />
@@ -227,6 +233,7 @@
     <Content Include="Views\產品類別\Details.cshtml" />
     <Content Include="Views\產品類別\Edit.cshtml" />
     <Content Include="Views\產品類別\Index.cshtml" />
+    <Content Include="Views\_07Object\polymophism.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

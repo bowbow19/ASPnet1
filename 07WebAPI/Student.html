@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Student web apu demo</h1>
+            <p>
+                A Web Appliction
+            </p>
+            <p><a href="#" class="btn btn-primary">learn more...</a></p>
+
+
+        </div>
+        <form id="form1">
+            <div>
+                <label for="id" class="col-form-label">學號</label>
+                <input id="id" name="學號" type="text" class="form-control" />
+            </div>
+            <div>
+                <label for="name" class="col-form-label">姓名</label>
+                <input id="name" name="姓名" type="text" class="form-control" />
+            </div>
+            <div>
+                <label for="gender" class="col-form-label">性別</label>
+                <input id="gender" name="性別" type="text" class="form-control" />
+            </div>
+
+            <div>
+                <label for="id" class="col-form-label">生日</label>
+                <input id="birthday" name="生日" type="text" class="form-control" />
+            </div>
+            <div>
+                <label for="tel" class="col-form-label">電話</label>
+                <input id="tel" name="電話" type="text" class="form-control" />
+            </div>
+
+            <input id="btnList" type="button" value="顯示所有資料" class="btn btn-success btn-block" />
+
+            <input id="btnAdd" type="button" value="新增" class="btn btn-primary btn-block" />
+            <input id="btnGet" type="button" value="查詢" class="btn btn-warning btn-block" />
+            <input id="btnUpdate" type="button" value="修改" class="btn btn-info btn-block" />
+            <input id="btnDelete" type="button" value="刪除" class="btn btn-info btn-block" />
+
+
+
+        </form>
+
+        <hr />
+        <ul id="list" class="list-group list-group-flush"></ul>
+
+    </div>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script>
+        //新增
+        $('#btnAdd').click(function () {
+            console.log($('#form1').serialize());
+            $.ajax({
+                type: "Post",
+                url: "http://localhost:62963/api/Student",
+                data: $('#form1').serialize()
+            });
+        });
+        //修改
+        $('#btnUpdate').click(function () {
+            console.log($('#form1').serialize());
+            $.ajax({
+                type: "Put",
+                url: "http://localhost:62963/api/Student/" + $('#id').val(),
+                data: $('#form1').serialize(),
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+        //刪除
+        $('#btnDelete').click(function () {
+            $.ajax({
+                type: "Delete",
+                url: "http://localhost:62963/api/Student/" + $('#id').val(),
+                data: $('#form1').serialize(),
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+        //所有資料
+        $('#btnList').click(function () {
+            $('#list').empty();
+            $.ajax({
+                type: "Get",
+                url: "http://localhost:62963/api/Student",
+                success: function (data) {
+                    console.log(data);
+
+                    data.forEach(function (item) {
+
+                        $('#list').append("<li class='list-group-item  bg-light border-danger'>學號：" + item.學號 + "　姓名：" + item.姓名 + "　性別：" + item.性別 + "　生日：" + item.生日 + "　電話：" + item.電話 + "</li>");
+                    });
+                }
+            });
+        })
+
+
+        //查詢某筆資料
+        $('#btnGet').click(function () {
+            $.ajax({
+                type: "Get",
+                url: "http://localhost:62963/api/Student/" + $('#id').val(),
+                success: function (data) {
+                    console.log(data);
+
+                    $('#name').val(data.姓名);
+                    $('#gender').val(data.性別);
+                    $('#birthday').val(data.生日);
+                    $('#tel').val(data.電話);
+                }
+
+                });
+
+              });
+
+    </script>
+
+</body>
+</html>

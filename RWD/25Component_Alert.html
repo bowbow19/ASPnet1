@@ -1,0 +1,55 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="alert alert-danger">
+            您現在是最高權限,用完後請馬上登出
+        </div>
+
+        <hr />
+
+        <div class="alert alert-danger">
+            您現在是最高權限,用完後請馬上登出
+        </div>
+
+        <hr />
+
+        <div class="alert alert-danger">
+            您現在是最高權限,用完後請馬上登出<a href="#" class="alert-link">登出系統</a>
+        </div>
+
+        <div class="alert alert-dark" data-dismiss="alert">
+            <h4>您好~系統管理員~</h4>
+            <p> 您現在是最高權限,用完後請馬上登出</p>
+            <button type="button" class="close">&times;</button>
+            <hr />
+            <p>請記得登出保障您的帳號密碼安全</p>
+        </div>
+
+
+    </div>
+        <script src="Scripts/jquery-3.0.0.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+
+  <script>
+      //Boostrape官網可複製此程式碼
+
+      $('#myAlart').on('close.bs.alert', function () {
+          alert("使用完畢請記得登出~")
+      });
+
+
+  </script>
+
+
+
+</body>
+</html>

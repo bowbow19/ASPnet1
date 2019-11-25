@@ -110,5 +110,6 @@ namespace _00MVC_CRUD_Products.Controllers
 
             return RedirectToAction("Index");  //導向Index的Action方法
         }
+
     }
 }
